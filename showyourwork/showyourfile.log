@@ -1,0 +1,9 @@
+/src/main/kotlin/Main.kt
+/src/main/kotlin/CellSolutionStrategy.kt
+/src/main/kotlin/Puzzle.kt
+/src/main/kotlin/Cell.kt
+/src/main/kotlin/Strategies/CellSolutionStrategy.kt
+/src/main/kotlin/Strategies/OnlyOnePlace.kt
+/src/main/kotlin/Strategies/showyourwork/OnlyOnePossibility.kt
+/src/main/kotlin/Strategies/Twins.kt
+/src/main/kotlin/Strategies/Guess.kt
