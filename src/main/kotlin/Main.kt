@@ -11,12 +11,13 @@ fun main(args: Array<String>) {
     val side = lines[0].toInt()
     val validSymbols = lines[1].split(" ") //makes an array of strings containing each valid symbol
     if (sqrt(side.toDouble()) % 1 != 0.0) {
-        lines.add("Invalid: not formatted correctly")
+        lines.add("Invalid: size of puzzle is not a perfect square")
         //write new file to output directory with same file name
     }
-    var puzzle = Puzzle()
-    puzzle.setSize(side)
-    puzzle.setValidSymbols(validSymbols)
+    val currentPuzzle = Puzzle
+    currentPuzzle.setSize(side)
+    currentPuzzle.setValidSymbols(validSymbols)
+
 
     for(i in 2 until lines.size) {
         val valueList = lines[i].split(" ").toMutableList() //initial board setup
@@ -25,15 +26,26 @@ fun main(args: Array<String>) {
             //write new file to output directory with same file name
             break
         }
-        puzzle.board.add(i - 2, valueList)
+        var cellList = mutableListOf<Cell>()
+        for (j in 0 until side) {
+            if (valueList[j] !in validSymbols && valueList[j] != "-") {
+                lines.add("Invalid: invalid symbol detected")
+                //write new file to output directory with same file name
+                break
+            }
+            val cell = Cell(valueList[j])
+            cell.setPossibleValues(validSymbols)
+            cellList.add(cell)
+        }
+        currentPuzzle.board.add(i - 2, cellList)
     }
 //save this code for later - helps test if board is being read right
-//    for (i in 0 until side) {
-//        for (j in 0 until side) {
-//            print(puzzle.board[i][j] + " ")
-//        }
-//        println()
-//    }
+/*    for (i in 0 until side) {
+        for (j in 0 until side) {
+            print(puzzle.board[i][j].toString() + " ")
+        }
+        println()
+    }*/
 
 //    while(currentPuzzle != null and currentPuzzle not solved and you don't need to backtrack):
 //        apply your strategies to the puzzle until one of them makes a change to the puzzle
@@ -54,8 +66,4 @@ fun main(args: Array<String>) {
 //                if (you have 0 solutions) report accordingly
 //                else if (you have exactly 1 solution) report accordingly
 //    else report that the puzzle is invalid because it has multiple solutions.
-}
-
-fun isPerfectSquare(number: Int): Boolean {
-    return sqrt(number.toDouble()) % 1.0 == 0.0
 }

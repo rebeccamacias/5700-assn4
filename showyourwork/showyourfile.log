@@ -7,3 +7,5 @@
 /src/main/kotlin/Strategies/showyourwork/OnlyOnePossibility.kt
 /src/main/kotlin/Strategies/Twins.kt
 /src/main/kotlin/Strategies/Guess.kt
+/src/test/kotlin/PuzzleTest.java
+/src/test/kotlin/PuzzleTest.kt

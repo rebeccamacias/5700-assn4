@@ -1,7 +1,8 @@
-class Puzzle() {
+object Puzzle {
     private var size: Int = 0
     private var validSymbols: List<String> = listOf()
-    var board: MutableList<MutableList<String>> = mutableListOf()
+    var isSolved: Boolean = false
+    var board: MutableList<MutableList<Cell>> = mutableListOf()
 
     fun getSize(): Int {
         return size
