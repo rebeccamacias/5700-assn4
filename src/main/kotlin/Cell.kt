@@ -1,5 +1,7 @@
 class Cell(var symbol: String) {
     private val possibleValues: MutableList<String> = mutableListOf()
+    private var row = 0
+    private var column = 0
     val isFilled = symbol != "-"
 
     fun getPossibleValues(): List<String> = possibleValues
@@ -16,5 +18,21 @@ class Cell(var symbol: String) {
             possibleValues.remove(value)
         }
         return true
+    }
+
+    fun setRow(row: Int) {
+        this.row = row
+    }
+
+    fun setColumn(column: Int) {
+        this.column = column
+    }
+
+    fun getRow() : Int {
+        return row
+    }
+
+    fun getColumn() : Int {
+        return column
     }
 }

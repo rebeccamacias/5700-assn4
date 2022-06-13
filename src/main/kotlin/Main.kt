@@ -1,8 +1,11 @@
 import java.io.File
+import java.util.*
 import kotlin.io.path.Path
 import kotlin.io.path.isDirectory
 import kotlin.math.sqrt
-
+var puzzleCopies : Stack<Puzzle> = Stack()
+var possibleSolutions: MutableList<Puzzle> = mutableListOf()
+var currentPuzzle: Puzzle? = null
 fun main(args: Array<String>) {
     val file = File(args[0])
     val lines = file.useLines {
@@ -14,11 +17,9 @@ fun main(args: Array<String>) {
         lines.add("Invalid: size of puzzle is not a perfect square")
         //write new file to output directory with same file name
     }
-    val currentPuzzle = Puzzle
+    var currentPuzzle = Puzzle
     currentPuzzle.setSize(side)
     currentPuzzle.setValidSymbols(validSymbols)
-
-
     for(i in 2 until lines.size) {
         val valueList = lines[i].split(" ").toMutableList() //initial board setup
         if (valueList.size != side) {
@@ -35,20 +36,33 @@ fun main(args: Array<String>) {
             }
             val cell = Cell(valueList[j])
             cell.setPossibleValues(validSymbols)
+            cell.setRow(i - 2)
+            cell.setColumn(j)
             cellList.add(cell)
         }
         currentPuzzle.board.add(i - 2, cellList)
     }
+    puzzleCopies.push(currentPuzzle)
 //save this code for later - helps test if board is being read right
-/*    for (i in 0 until side) {
+    for (i in 0 until side) {
         for (j in 0 until side) {
-            print(puzzle.board[i][j].toString() + " ")
+            print(currentPuzzle.board[i][j].toString() + " ")
+            if (j - 1 % sqrt(side.toDouble()) == 0.0) {
+                print("| ")
+            }
         }
         println()
-    }*/
+        if (i - 1 % sqrt(side.toDouble()) == 0.0) {
+            println("--".repeat(side + 1))
+        }
+    }
 
+    currentPuzzle = puzzleCopies.pop()
 //    while(currentPuzzle != null and currentPuzzle not solved and you don't need to backtrack):
-//        apply your strategies to the puzzle until one of them makes a change to the puzzle
+    while (currentPuzzle != null && !currentPuzzle.isSolved) {
+        //apply your strategies to the puzzle until one of them makes a change to the puzzle
+
+    }
 //        if (no strategies made a change)
 //            currentPuzzle = backtrack to the most recent guess // you can use a stack for this and just copy the puzzle at the point a guess is made then just pop it off the stack here
 //                    if (no puzzle to backtrack to)
@@ -57,7 +71,10 @@ fun main(args: Array<String>) {
 //                    else
 //                        check to see if the changes solved the puzzle
 //    if (puzzle is solved):
-//    add the current puzzle to a list of possible solutions
+    if (puzzleCopies.peek().isSolved) {
+        possibleSolutions.add(puzzleCopies.pop()) //add the current puzzle to a list of possible solutions
+
+    }
 //            currentPuzzle = backtrack to most recent guess
 //    if (no puzzle to back track to)
 //        done solving

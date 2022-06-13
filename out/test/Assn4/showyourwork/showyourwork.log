@@ -1509,3 +1509,7 @@ internal class PuzzleTest {
 "e","","org.junit.jupiter.api.","856","1655000338830","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
 "a","Backspace",,,"1655000342799","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
 "e","","org.junit.jupiter.api.","280","1655000342801","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
+"a","Backspace",,,"1655000346400","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
+"e","","org.junit.jupiter.api.","111","1655000346403","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
+"a","Close Active Editor",,,"1655005462319","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
+"a","Close Active Editor",,,"1655005468830","PuzzleTest.kt","1.1.3 for 2021-2022 @t1",
