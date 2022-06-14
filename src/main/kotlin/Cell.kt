@@ -2,6 +2,7 @@ class Cell(var symbol: String) {
     private val possibleValues: MutableList<String> = mutableListOf()
     private var row = 0
     private var column = 0
+    private var boxId = 0
     val isFilled = symbol != "-"
 
     fun getPossibleValues(): List<String> = possibleValues
@@ -34,5 +35,13 @@ class Cell(var symbol: String) {
 
     fun getColumn() : Int {
         return column
+    }
+
+    fun getBoxId() : Int {
+        return boxId
+    }
+
+    fun setBoxId(boxId: Int) {
+        this.boxId = boxId
     }
 }
