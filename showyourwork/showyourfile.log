@@ -10,3 +10,9 @@
 /src/test/kotlin/PuzzleTest.java
 /src/test/kotlin/PuzzleTest.kt
 /src/main/kotlin/Box.kt
+/src/main/kotlin/Strategies/ApplyChanges.kt
+/src/main/kotlin/Strategies/OnlyOnePossibility.kt
+/src/main/kotlin/Strategies/GuessStrategy.kt
+/src/main/kotlin/Strategies/OnlyOnePossibilityStrategy.kt
+/.idea/workspace.xml
+/src/main/kotlin/Strategies/OnlyOnePlaceStrategy.kt

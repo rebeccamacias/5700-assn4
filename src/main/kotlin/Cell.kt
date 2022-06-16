@@ -13,12 +13,15 @@ class Cell(var symbol: String) {
     override fun toString() : String {
         return symbol
     }
-    //do we really need this to return a boolean?
-    private fun removeValue(value: String) : Boolean {
+
+    fun removeValue(value: String) {
         if (possibleValues.contains(value)) {
             possibleValues.remove(value)
         }
-        return true
+    }
+
+    fun clearPossibleValues() {
+        possibleValues.clear()
     }
 
     fun setRow(row: Int) {
