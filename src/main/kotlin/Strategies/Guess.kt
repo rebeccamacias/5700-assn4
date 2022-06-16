@@ -1,4 +1,0 @@
-package Strategies
-
-class Guess {
-}
