@@ -16,3 +16,10 @@
 /src/main/kotlin/Strategies/OnlyOnePossibilityStrategy.kt
 /.idea/workspace.xml
 /src/main/kotlin/Strategies/OnlyOnePlaceStrategy.kt
+/src/test/kotlin/Strategies/OnlyOnePlaceStrategyTest.java
+/src/test/kotlin/Strategies/OnlyOnePlaceStrategyTest0.java
+/src/test/kotlin/Strategies/OnlyOnePlaceStrategyTest.kt
+/src/test/kotlin/Strategies/OnlyOnePossibilityStrategyTest.java
+/src/test/kotlin/Strategies/OnlyOnePossibilityStrategyTest.kt
+/src/test/kotlin/CellTest.java
+/src/test/kotlin/CellTest.kt
